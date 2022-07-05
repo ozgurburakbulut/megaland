@@ -16,10 +16,9 @@ order = client.create_order(
     price='225')
 
 
-class OrderInfo:
-    order = client.get_order(
-        symbol='BNBBUSD',
-        orderId='buraya order id')
+orderStatus = client.get_order(
+    symbol='BNBBUSD',
+    orderId='buraya order id')
 
 
 app = Flask(__name__)
@@ -27,5 +26,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def Definition():
-    status = OrderInfo()
-    print(json.dumps(status))
+    print(json.dumps(orderStatus))
